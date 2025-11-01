@@ -1,28 +1,26 @@
 .star-border-container {
   position: relative;
-  display: inline-block;
+  display: block;
   width: 100%;
 }
 
 .border-gradient-bottom,
 .border-gradient-top {
   position: absolute;
-  width: 20px;
-  height: 20px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
-  filter: blur(4px);
-  opacity: 0.8;
+  filter: blur(2px);
+  opacity: 1;
+  z-index: 10;
+  pointer-events: none;
 }
 
 .border-gradient-bottom {
-  bottom: 0;
-  left: 0;
   animation: moveAlongBorderBottom linear infinite;
 }
 
 .border-gradient-top {
-  top: 0;
-  left: 0;
   animation: moveAlongBorderTop linear infinite;
 }
 
@@ -33,50 +31,46 @@
 
 @keyframes moveAlongBorderBottom {
   0% {
-    left: 0;
-    bottom: 0;
+    left: -6px;
+    top: -6px;
   }
   25% {
-    left: 100%;
-    bottom: 0;
+    left: calc(100% - 6px);
+    top: -6px;
   }
   50% {
-    left: 100%;
-    bottom: 100%;
+    left: calc(100% - 6px);
+    top: calc(100% - 6px);
   }
   75% {
-    left: 0;
-    bottom: 100%;
+    left: -6px;
+    top: calc(100% - 6px);
   }
   100% {
-    left: 0;
-    bottom: 0;
+    left: -6px;
+    top: -6px;
   }
 }
 
 @keyframes moveAlongBorderTop {
   0% {
-    left: 50%;
-    top: 0;
+    left: calc(50% - 6px);
+    top: -6px;
   }
   25% {
-    left: 100%;
-    top: 0;
+    left: calc(100% - 6px);
+    top: -6px;
   }
   50% {
-    left: 100%;
-    top: 100%;
+    left: calc(100% - 6px);
+    top: calc(100% - 6px);
   }
   75% {
-    left: 0;
-    top: 100%;
+    left: -6px;
+    top: calc(100% - 6px);
   }
   100% {
-    left: 0;
-    top: 0;
-  }
-  100% {
-    left: 50%;
-    top: 0;
+    left: -6px;
+    top: -6px;
   }
 }
